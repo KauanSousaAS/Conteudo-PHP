@@ -14,8 +14,8 @@
     $maçã; // erro no "ç" e "~".
 // 2ª Uma variável não pode ter um número após o cifrão.
 //  $1exemplo
-// 3ª Uma variável não pode ser criada com nomes reservados, como "this", referente a 
-// objeto.
+// 3ª Uma variável não pode ser criada com o nome de variaveis pré-definidas, como 
+// "this", referente a objeto.
 // É importante lembrar de criar as variáveis com algum tipo de formatação, como 
 // exemplo, a CamelCase se baseia em escrever o primeiro nome da variável com a
 // inicial minúscula, caso a variável tenha um nome composto os nomes seguintes devem 
