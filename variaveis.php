@@ -2,7 +2,7 @@
 
 // ---- Gerando uma variável ----
 
-// Para criar uma variável é necessário inserir o cifrão($) e o nome da variável
+// Para criar uma variável é necessário inserir o cifrão($) e o nome da variável.
     $variavel;
 
 // Com o comando unset(), a variável pode ser excluída.
@@ -16,6 +16,7 @@
 //  $1exemplo
 // 3ª Uma variável não pode ser criada com o nome de variaveis pré-definidas, como 
 // "this", referente a objeto.
+
 // É importante lembrar de criar as variáveis com algum tipo de formatação, como 
 // exemplo, a CamelCase se baseia em escrever o primeiro nome da variável com a
 // inicial minúscula, caso a variável tenha um nome composto os nomes seguintes devem 
@@ -49,9 +50,50 @@
     $string = "Hello World!!"; // Hello World!!
 // Tipo composto
     $array = array($integer, $float, $string); // Array ( [0] => 10 [1] => 5.5 [2] => Hello World!! )
-    $object = new DateTime(); // DateTime Object ( [date] => 2023-01-31 01:24:19.014620 [timezone_type] => 3 [timezone] => Europe/Berlin )
+    $object = new DateTime(); // Object ( [date] => 2023-01-31 01:24:19.014620 [timezone_type] => 3 [timezone] => Europe/Berlin )
 // Tipo especial
     $resource = fopen("variaveis.php", "r"); // atribui o arquivo a variável
     $null = null; // variável sem valor
-    // Lembrete: uma variável vazia é diferente de uma sem valor, para uma variavél
+    // Lembrete: Uma variável vazia é diferente de uma sem valor, para uma variavél
     // não ter valor algum ela deve ser criada com o atributo null como visto acima.
+
+// ---- Variáveis pré-definidas ----
+
+// As variáveis pré-definidas ou variáveis globais são variáveis internas do PHP que
+// possuem determinados recursos e utilidades. Como exemplo, as variáveis $_GET e
+// $_POST que são utilizadas para armazenar dos dados inseridos nos formulários.
+// Também temos as variáveis mais relevantes como: $_SERVER, onde encontramos 
+// informações do servidor e do usuário. $_SESSION, onde obtemos as informações das
+// sessões referentes ao site, presentes na máquina do usuário. E $_COOKIES onde 
+// obtemos informações dos cookies referentes ao site, presentes também na máquina 
+// do usuário.
+
+// ---- Escopo das variáveis ----
+
+// O escopo da variável é basicamente até onde essa variável pode ser vista.
+    session_start();
+    // Lembrete: É necessário iniciar a sessão para a utilizarmos
+    $_SESSION["codigoSessao"] = "123"; 
+    // Variáveis pré-definidas são consideradas variáveis super globais, ou seja,
+    // elas podem ser vistas por todo o PHP contido no arquivo. Além disso, 
+    // variáveis como $_SESSION e $_COOKIES podem ser vistos até por outros arquivos.
+    $chave = "321";
+    // Variáveis globais são variáveis vistas somente pelo PHP do arquivo de origem.
+
+    function funcao($a){
+        // Nas funções as variáveis globais não são identificadas, para realizar essa 
+        // idenificação temos dois métodos, Atribuir a variável a função (linha 96), sendo 
+        // que a função tenha uma nova variável para armazenar a informação (linha 83 - $a)
+        // ou inserir a variável na função em seguida de um "global" (linha 88)
+        global $chave;
+        $a; // 321
+        $chave; // 321
+        $_SESSION["codigoSessao"]; // 123
+        // Diferente das globais, as variáveis super globais podem podem ser chamadas
+        // nas funções sem qualquer preocupação já que nas funções essas variáveis já
+        // são identificadas.
+    }
+    funcao($chave);
+    // Lembrete: toda função precisa ser chamada para ser executada.
+    $a; // sem valor, as variáveis criadas na função só são visíveis dentro da função.
+    
