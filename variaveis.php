@@ -76,7 +76,7 @@
     $_SESSION["codigoSessao"] = "123"; 
     // Variáveis pré-definidas são consideradas variáveis super globais, ou seja,
     // elas podem ser vistas por todo o PHP contido no arquivo. Além disso, 
-    // variáveis como $_SESSION e $_COOKIES podem ser vistos até por outros arquivos.
+    // Existe o $_SESSION e o $_COOKIES que podem transmitir valor entre arquivos.
     $chave = "321";
     // Variáveis globais são variáveis vistas somente pelo PHP do arquivo de origem.
 
