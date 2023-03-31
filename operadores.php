@@ -103,5 +103,4 @@ echo (++$valorExemplo) . "<br>"; // 12
 echo ($valorExemplo--) . "<br>"; // 12
 echo ($valorExemplo) . "<br>"; // 11
 echo (--$valorExemplo) . "<br>"; // 10
-
 ?>
