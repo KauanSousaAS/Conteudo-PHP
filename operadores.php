@@ -1,4 +1,4 @@
-<?php
+<?php // OPERADORES
 
 // ---- Operadores de Atribuição ----
 
